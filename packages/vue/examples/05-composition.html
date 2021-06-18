@@ -1,0 +1,25 @@
+<div id="app">
+  <p @click="add">{{state.counter}}</p>
+</div>
+
+<script src="../dist/vue.global.js"></script>
+<script>
+  const { createApp, reactive, computed } = Vue
+  createApp({
+    setup(props, {emit, slots, attrs}) {
+      const state = reactive({
+        counter: 0,
+        doubleCounter: computed(() => state.counter * 2
+        )
+      })
+      function add() {
+        state.counter ++
+      }
+      // 暴露给render
+      return {
+        state,
+        add
+      }
+    }
+  }).mount('#app')
+</script>

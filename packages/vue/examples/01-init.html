@@ -1,0 +1,13 @@
+<div id="app">{{title}}</div>
+
+<script src="../dist/vue.global.js"></script>
+<script>
+  const { createApp } = Vue
+  createApp({
+    data() {
+      return {
+        title: 'hello vue3'
+      }
+    },
+  }).mount('#app')
+</script>

@@ -1,0 +1,20 @@
+<div id="app">{{foo}}</div>
+
+<script src="../dist/vue.global.js"></script>
+<script>
+  const { createApp } = Vue
+  createApp({
+    props: {
+      foo: {
+        type: String,
+        default: ''
+      }
+    },
+    setup(props) {
+      return {
+        title: 'setup'
+      }
+    }
+  },{foo: 'foo'})
+  .mount('#app')
+</script>
